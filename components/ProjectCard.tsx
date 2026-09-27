@@ -74,6 +74,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             {project.description}
           </p>
 
+          {/* Team Contribution Scope Callout */}
+          {project.contributionNote && (
+            <div className="p-2.5 rounded-lg bg-indigo-950/40 border border-indigo-700/50 text-indigo-300 text-xs font-mono">
+              <span className="font-semibold text-white">Role Scope: </span>
+              {project.contributionNote}
+            </div>
+          )}
+
           {/* Project Highlights */}
           {project.highlights && project.highlights.length > 0 && (
             <div className="p-3.5 rounded-xl bg-[#070c17] border border-slate-800/80 space-y-2">

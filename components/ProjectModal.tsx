@@ -60,6 +60,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             {project.title}
           </h2>
+          {project.contributionNote && (
+            <div className="p-3 rounded-xl bg-indigo-950/50 border border-indigo-700/60 text-indigo-200 text-xs sm:text-sm font-mono">
+              <span className="font-bold text-white">Engineering Scope: </span>
+              {project.contributionNote}
+            </div>
+          )}
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
             {project.description}
           </p>

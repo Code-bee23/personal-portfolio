@@ -4,6 +4,7 @@ export interface Project {
   title: string;
   category: string[];
   badge?: string;
+  contributionNote?: string;
   description: string;
   highlights: string[];
   problem: string;
@@ -132,7 +133,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       title: "Backend",
-      skills: ["FastAPI", "REST APIs", "Python", "Pydantic"],
+      skills: ["FastAPI", "REST APIs", "Python", "Pydantic", "TypeScript", "Node.js"],
       iconName: "Server"
     },
     {
@@ -430,6 +431,53 @@ export const portfolioData: PortfolioData = {
       githubUrl: "https://github.com/Code-bee23/AI-powered-resume",
       liveUrl: "",
       image: "/projects/ai-resume.svg"
+    },
+    {
+      id: "spendguard",
+      number: "06",
+      title: "SpendGuard",
+      category: ["Backend", "FinOps", "SaaS Infrastructure", "TypeScript", "REST API"],
+      badge: "Backend Contribution",
+      contributionNote: "Backend contribution — Budgets, Alerts, Reporting & Billing",
+      description: "A SaaS spending-management platform with budget monitoring, threshold alerts, financial reporting, and billing modules.",
+      highlights: [
+        "Backend contribution — Budgets, Alerts, Reporting & Billing",
+        "Budget limit monitoring & threshold alert triggers",
+        "FinOps cost breakdown & analytical reporting",
+        "SaaS billing lifecycle & subscription usage metering"
+      ],
+      technologies: [
+        "TypeScript",
+        "Node.js",
+        "REST API",
+        "FinOps",
+        "SaaS Infrastructure",
+        "PostgreSQL"
+      ],
+      problem: "Multi-tenant SaaS platforms require reliable backend services to monitor organizational cloud expenditures against allocated caps, trigger instant breach alerts, and generate consolidated billing reports.",
+      solution: "Contributed to the SpendGuard team repository by engineering and owning the backend modules for budget monitoring, threshold alert triggers, FinOps reporting analytics, and billing pipelines.",
+      keyFeatures: [
+        "01 — Budgets Module: Real-time spend tracking and allocated budget threshold surveillance.",
+        "02 — Alerts Module: Event-driven notification dispatch when expenditures exceed predefined percentages.",
+        "03 — Reporting Module: Automated cost breakdowns and financial data aggregation.",
+        "04 — Billing Module: Subscription metering, invoice record management, and usage sync."
+      ],
+      architecture: [
+        "SaaS Invoices & Usage",
+        "Backend API (apps/api)",
+        "Budgets & Threshold Evaluator",
+        "Alerts Trigger Engine",
+        "Automated Reports & Billing Sync"
+      ],
+      codeFiles: [
+        { file: "apps/api/src/modules/budgets/", desc: "Budget limits & threshold monitoring" },
+        { file: "apps/api/src/modules/reports/", desc: "FinOps cost breakdown & reporting" },
+        { file: "apps/api/src/modules/billing/", desc: "Billing sync & subscription metering" }
+      ],
+      deployment: "Node.js / TypeScript SaaS Backend",
+      githubUrl: "https://github.com/DevNs-cmd/Spend-Guard",
+      liveUrl: "",
+      image: "/projects/spendguard.svg"
     }
   ],
   learningPillars: [

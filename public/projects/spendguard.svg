@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d19" />
+      <stop offset="50%" stop-color="#0f192d" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="emerald-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#sg-bg)" />
+
+  <pattern id="sg-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.4" />
+  </pattern>
+  <rect width="1200" height="700" fill="url(#sg-grid)" />
+
+  <!-- App Window Container -->
+  <rect x="60" y="50" width="1080" height="600" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Window Header -->
+  <rect x="60" y="50" width="1080" height="50" rx="16" fill="#090d16" stroke="#334155" stroke-width="1" />
+  <circle cx="95" cy="75" r="6" fill="#ef4444" />
+  <circle cx="115" cy="75" r="6" fill="#f59e0b" />
+  <circle cx="135" cy="75" r="6" fill="#10b981" />
+  <text x="600" y="80" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="14" font-weight="500">SpendGuard — FinOps Backend Modules (Budgets, Alerts, Reports &amp; Billing)</text>
+
+  <!-- Left: Gauri's Module Ownership Tree -->
+  <rect x="90" y="125" width="480" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+  <text x="115" y="160" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Backend Module Architecture</text>
+  <text x="115" y="180" fill="#64748b" font-family="-apple-system, sans-serif" font-size="12">Gauri's Core Owned Modules (apps/api/src/modules/)</text>
+
+  <!-- Module Tree Box -->
+  <rect x="115" y="200" width="430" height="180" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+  <text x="135" y="225" fill="#38bdf8" font-family="monospace" font-size="12" font-weight="600">apps/api/src/modules/</text>
+  
+  <text x="145" y="250" fill="#34d399" font-family="monospace" font-size="12">├── 📁 budgets/</text>
+  <text x="260" y="250" fill="#94a3b8" font-family="monospace" font-size="11">── Threshold monitors &amp; limits</text>
+
+  <text x="145" y="275" fill="#34d399" font-family="monospace" font-size="12">├── 📁 reports/</text>
+  <text x="260" y="275" fill="#94a3b8" font-family="monospace" font-size="11">── FinOps cost breakdown engine</text>
+
+  <text x="145" y="300" fill="#34d399" font-family="monospace" font-size="12">└── 📁 billing/</text>
+  <text x="260" y="300" fill="#94a3b8" font-family="monospace" font-size="11">── Invoice &amp; subscription sync</text>
+
+  <text x="135" y="335" fill="#a78bfa" font-family="monospace" font-size="11">✓ Multi-tenant data segregation</text>
+  <text x="135" y="358" fill="#a78bfa" font-family="monospace" font-size="11">✓ Async alert triggers &amp; notification dispatch</text>
+
+  <!-- Highlight Badge Card -->
+  <rect x="115" y="395" width="430" height="100" rx="8" fill="#1e1b4b" stroke="#4338ca" stroke-width="1" />
+  <text x="135" y="425" fill="#a5b4fc" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">TEAM PROJECT CONTRIBUTION</text>
+  <text x="135" y="450" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12">Engineered the core financial logic, automated budget limit</text>
+  <text x="135" y="472" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12">evaluations, and reporting pipelines for the SaaS platform.</text>
+
+  <!-- Button -->
+  <rect x="115" y="515" width="430" height="42" rx="8" fill="url(#emerald-cyan)" />
+  <text x="330" y="541" text-anchor="middle" fill="#020617" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">Explore Backend Implementation →</text>
+
+  <!-- Right: Dashboard & Financial Metrics Preview -->
+  <rect x="590" y="125" width="520" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Budget Status Card -->
+  <rect x="615" y="150" width="470" height="110" rx="10" fill="#064e3b" stroke="#059669" stroke-width="1" />
+  <text x="635" y="178" fill="#a7f3d0" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">ACTIVE BUDGET SURVEILLANCE</text>
+  <text x="635" y="215" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="26" font-weight="700">Engineering Cloud Budget: 82%</text>
+  <text x="635" y="240" fill="#a7f3d0" font-family="-apple-system, sans-serif" font-size="11">● Alerts Engine: 80% Threshold Trigger Dispatched</text>
+
+  <!-- Reporting & Metrics -->
+  <rect x="615" y="275" width="470" height="145" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+  <text x="635" y="302" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Module Pipeline Responsibilities</text>
+  
+  <text x="635" y="330" fill="#38bdf8" font-family="monospace" font-size="12">1. Budgets: Real-time spend tracking vs allocated caps</text>
+  <text x="635" y="354" fill="#cbd5e1" font-family="monospace" font-size="12">2. Alerts: Webhook &amp; email event triggers upon breach</text>
+  <text x="635" y="378" fill="#cbd5e1" font-family="monospace" font-size="12">3. Reports: Automated CSV/JSON cost breakdown generation</text>
+  <text x="635" y="402" fill="#34d399" font-family="monospace" font-size="12">4. Billing: Subscription usage metering &amp; invoice records</text>
+
+  <!-- Repo Attribution Box -->
+  <rect x="615" y="435" width="470" height="165" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="635" y="462" fill="#a5b4fc" font-family="monospace" font-size="11" font-weight="600">REPOSITORY REPO &amp; TEAM CONTEXT</text>
+  <text x="635" y="486" fill="#e2e8f0" font-family="monospace" font-size="11">Repository: DevNs-cmd / Spend-Guard</text>
+  <text x="635" y="508" fill="#38bdf8" font-family="monospace" font-size="11">Scope: Backend Modules (Budgets, Reports, Billing)</text>
+  <text x="635" y="530" fill="#cbd5e1" font-family="monospace" font-size="11">Stack: TypeScript • Node.js • REST API</text>
+  <text x="635" y="552" fill="#34d399" font-family="monospace" font-size="11">Contribution: End-to-end backend module ownership</text>
+</svg>
