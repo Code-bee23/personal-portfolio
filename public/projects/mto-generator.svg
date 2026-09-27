@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mto-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#mto-bg)" />
+
+  <!-- Grid overlay -->
+  <pattern id="mto-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.35" />
+  </pattern>
+  <rect width="1200" height="700" fill="url(#mto-grid)" />
+
+  <!-- App Window -->
+  <rect x="60" y="50" width="1080" height="600" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Header -->
+  <rect x="60" y="50" width="1080" height="50" rx="16" fill="#0b0f19" stroke="#334155" stroke-width="1" />
+  <circle cx="95" cy="75" r="6" fill="#ef4444" />
+  <circle cx="115" cy="75" r="6" fill="#f59e0b" />
+  <circle cx="135" cy="75" r="6" fill="#10b981" />
+  <text x="600" y="80" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="14" font-weight="500">AI MTO Generator — Engineering OCR &amp; Vision-LLM Pipeline</text>
+
+  <!-- Left Column: Source Schematic / Document -->
+  <rect x="90" y="125" width="460" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+  <text x="115" y="160" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Input Engineering Schematic (PDF / Image)</text>
+  <text x="115" y="180" fill="#64748b" font-family="-apple-system, sans-serif" font-size="12">EasyOCR + OpenCV + LLaVA Multimodal Detection</text>
+
+  <!-- Schematic Mock Diagram -->
+  <rect x="115" y="200" width="410" height="280" rx="8" fill="#0a1222" stroke="#1e3a8a" stroke-dasharray="4,4" stroke-width="1.5" />
+  
+  <!-- Blueprint drawing lines -->
+  <path d="M 140 250 L 320 250 L 320 380 L 140 380 Z" fill="none" stroke="#38bdf8" stroke-width="1.5" />
+  <circle cx="230" cy="315" r="40" fill="none" stroke="#60a5fa" stroke-width="1.5" />
+  <line x1="140" y1="250" x2="320" y2="380" stroke="#1e40af" stroke-width="1" />
+  <line x1="320" y1="250" x2="140" y2="380" stroke="#1e40af" stroke-width="1" />
+  
+  <!-- Bounding Boxes Detected by OpenCV/OCR -->
+  <rect x="345" y="235" width="160" height="50" rx="4" fill="#065f46" fill-opacity="0.25" stroke="#10b981" stroke-width="1.5" />
+  <text x="355" y="255" fill="#34d399" font-family="monospace" font-size="11">PIPE-SCH40: 12m</text>
+  <text x="355" y="272" fill="#a7f3d0" font-family="monospace" font-size="10">Box: [x1,y1,x2,y2]</text>
+
+  <rect x="345" y="300" width="160" height="50" rx="4" fill="#065f46" fill-opacity="0.25" stroke="#10b981" stroke-width="1.5" />
+  <text x="355" y="320" fill="#34d399" font-family="monospace" font-size="11">FLANGE-ANSI-150</text>
+  <text x="355" y="337" fill="#a7f3d0" font-family="monospace" font-size="10">Qty: 08 Units</text>
+
+  <rect x="345" y="365" width="160" height="50" rx="4" fill="#065f46" fill-opacity="0.25" stroke="#10b981" stroke-width="1.5" />
+  <text x="355" y="385" fill="#34d399" font-family="monospace" font-size="11">GATE-VALVE-3IN</text>
+  <text x="355" y="402" fill="#a7f3d0" font-family="monospace" font-size="10">Qty: 02 Units</text>
+
+  <!-- Status Bar -->
+  <rect x="115" y="500" width="410" height="95" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <text x="130" y="525" fill="#94a3b8" font-family="monospace" font-size="11">Pipeline Status: <tspan fill="#34d399">OCR &amp; Vision-LLM Completed</tspan></text>
+  <text x="130" y="548" fill="#94a3b8" font-family="monospace" font-size="11">Local Inference: <tspan fill="#38bdf8">Ollama / LLaVA (Privacy Preserving)</tspan></text>
+  <text x="130" y="571" fill="#94a3b8" font-family="monospace" font-size="11">Engine: <tspan fill="#e2e8f0">FastAPI • OpenCV • pdf2image</tspan></text>
+
+  <!-- Right Column: Structured MTO Excel Table -->
+  <rect x="575" y="125" width="535" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+  
+  <rect x="600" y="145" width="485" height="40" rx="6" fill="#1e293b" />
+  <text x="615" y="170" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Generated Material Take-Off (MTO)</text>
+  <rect x="965" y="152" width="110" height="26" rx="4" fill="#15803d" />
+  <text x="1020" y="169" text-anchor="middle" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="11" font-weight="600">Export .XLSX</text>
+
+  <!-- Table Header -->
+  <rect x="600" y="200" width="485" height="35" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="615" y="222" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">ITEM</text>
+  <text x="680" y="222" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">DESCRIPTION</text>
+  <text x="890" y="222" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">SPEC / RATING</text>
+  <text x="1030" y="222" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">QTY</text>
+
+  <!-- Row 1 -->
+  <rect x="600" y="235" width="485" height="45" fill="#020617" stroke="#1e293b" stroke-width="0.5" />
+  <text x="615" y="262" fill="#cbd5e1" font-family="monospace" font-size="12">01</text>
+  <text x="680" y="262" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">Seamless Steel Pipe</text>
+  <text x="890" y="262" fill="#38bdf8" font-family="monospace" font-size="12">SCH-40 Carbon</text>
+  <text x="1030" y="262" fill="#34d399" font-family="monospace" font-size="12">12.0 m</text>
+
+  <!-- Row 2 -->
+  <rect x="600" y="280" width="485" height="45" fill="#0b1120" stroke="#1e293b" stroke-width="0.5" />
+  <text x="615" y="307" fill="#cbd5e1" font-family="monospace" font-size="12">02</text>
+  <text x="680" y="307" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">Weld Neck Flange</text>
+  <text x="890" y="307" fill="#38bdf8" font-family="monospace" font-size="12">ANSI Class 150</text>
+  <text x="1030" y="307" fill="#34d399" font-family="monospace" font-size="12">8 pcs</text>
+
+  <!-- Row 3 -->
+  <rect x="600" y="325" width="485" height="45" fill="#020617" stroke="#1e293b" stroke-width="0.5" />
+  <text x="615" y="352" fill="#cbd5e1" font-family="monospace" font-size="12">03</text>
+  <text x="680" y="352" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">Cast Steel Gate Valve</text>
+  <text x="890" y="352" fill="#38bdf8" font-family="monospace" font-size="12">3" Flanged 150#</text>
+  <text x="1030" y="352" fill="#34d399" font-family="monospace" font-size="12">2 pcs</text>
+
+  <!-- Row 4 -->
+  <rect x="600" y="370" width="485" height="45" fill="#0b1120" stroke="#1e293b" stroke-width="0.5" />
+  <text x="615" y="397" fill="#cbd5e1" font-family="monospace" font-size="12">04</text>
+  <text x="680" y="397" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="12">Spiral Wound Gasket</text>
+  <text x="890" y="397" fill="#38bdf8" font-family="monospace" font-size="12">3" 150# Graphite</text>
+  <text x="1030" y="397" fill="#34d399" font-family="monospace" font-size="12">8 pcs</text>
+
+  <!-- Highlight Box -->
+  <rect x="600" y="440" width="485" height="155" rx="8" fill="#1e1b4b" stroke="#4338ca" stroke-width="1" />
+  <text x="620" y="470" fill="#a5b4fc" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">HIGHLIGHTED BENEFIT</text>
+  <text x="620" y="498" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Replaces 100% manual transcription with automated extraction</text>
+  <text x="620" y="525" fill="#c7d2fe" font-family="-apple-system, sans-serif" font-size="12">Directly parses complex engineering tables, dimensions, and specifications</text>
+  <text x="620" y="548" fill="#c7d2fe" font-family="-apple-system, sans-serif" font-size="12">into structured datasets with validation checkpoints.</text>
+</svg>
