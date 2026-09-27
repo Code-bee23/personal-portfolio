@@ -3,6 +3,7 @@ export interface Project {
   number: string;
   title: string;
   category: string[];
+  badge?: string;
   description: string;
   highlights: string[];
   problem: string;
@@ -10,9 +11,11 @@ export interface Project {
   technologies: string[];
   keyFeatures: string[];
   architecture: string[];
+  batchArchitecture?: string[];
   deployment?: string;
   performance?: string[];
   disclaimer?: string;
+  codeFiles?: { file: string; desc: string }[];
   githubUrl?: string;
   liveUrl?: string;
   image?: string;
@@ -187,6 +190,7 @@ export const portfolioData: PortfolioData = {
       number: "01",
       title: "AI-Powered Symptom Checker System",
       category: ["Machine Learning", "Healthcare AI", "FastAPI"],
+      badge: "Featured AI Project",
       description: "An end-to-end AI-powered symptom checker built with Python that predicts possible diseases from user-selected symptoms.",
       highlights: [
         "94% precision on the stated dataset",
@@ -235,6 +239,7 @@ export const portfolioData: PortfolioData = {
       number: "02",
       title: "AI Factory Assistant",
       category: ["Agentic AI", "LLM", "Full-Stack"],
+      badge: "Featured AI Project",
       description: "An Agentic AI-powered factory assistant that answers production, quality, and maintenance queries in real time.",
       highlights: [
         "Agentic AI-powered assistant",
@@ -281,6 +286,7 @@ export const portfolioData: PortfolioData = {
       number: "03",
       title: "Emotion Detection from Text",
       category: ["NLP", "Machine Learning", "FastAPI"],
+      badge: "Featured AI Project",
       description: "An NLP system that analyzes textual input to detect and classify emotional states and sentiment in real time.",
       highlights: [
         "Text preprocessing & tokenization pipeline",
@@ -316,6 +322,65 @@ export const portfolioData: PortfolioData = {
       githubUrl: "https://github.com/Code-bee23/emotion-detection-text",
       liveUrl: "",
       image: "/projects/emotion-detection.svg"
+    },
+    {
+      id: "california-house-price-prediction",
+      number: "04",
+      title: "California House Price Prediction API",
+      category: ["Machine Learning", "Regression", "FastAPI", "REST API", "AI/ML", "Backend"],
+      badge: "Machine Learning Project",
+      description: "An end-to-end machine learning project that exposes a California house-price prediction model through a FastAPI REST API, supporting both individual predictions and batch CSV processing.",
+      highlights: [
+        "Random Forest Regression: Uses a Random Forest Regressor to predict California house prices.",
+        "REST API: Built with FastAPI to expose the machine learning prediction functionality.",
+        "Individual Prediction: Supports predictions for individual house inputs.",
+        "Batch Prediction: Supports CSV uploads for processing multiple house records with downloadable CSV results."
+      ],
+      technologies: [
+        "Python",
+        "FastAPI",
+        "Random Forest",
+        "Scikit-learn",
+        "REST API",
+        "Machine Learning",
+        "Regression"
+      ],
+      problem: "Predict California house prices from housing-related input data using a machine learning regression model.",
+      solution: "A Random Forest Regressor is exposed through a FastAPI backend. The API supports individual house-price prediction, batch prediction through CSV upload, input validation, processing of multiple records, and downloadable CSV results.",
+      keyFeatures: [
+        "01 — ML Prediction: Predict California house prices using a Random Forest regression model.",
+        "02 — FastAPI Backend: Expose the machine learning model through REST API endpoints.",
+        "03 — Individual Predictions: Allow individual house information to be submitted for prediction.",
+        "04 — Batch Predictions: Process multiple house records through CSV upload.",
+        "05 — Input Validation: Validate incoming prediction data before processing.",
+        "06 — Downloadable Results: Return batch prediction results as a downloadable CSV file."
+      ],
+      architecture: [
+        "User / Client",
+        "FastAPI REST API",
+        "Input Validation",
+        "Random Forest Regressor",
+        "House Price Prediction",
+        "JSON Response"
+      ],
+      batchArchitecture: [
+        "CSV Upload",
+        "FastAPI",
+        "Batch Prediction",
+        "Generated CSV",
+        "Download Results"
+      ],
+      codeFiles: [
+        { file: "train.py", desc: "Model training workflow" },
+        { file: "main.py", desc: "FastAPI application" },
+        { file: "explore.py", desc: "Data/model exploration" },
+        { file: "test_houses.csv", desc: "Test input data" },
+        { file: "requirements.txt", desc: "Project dependencies" }
+      ],
+      deployment: "FastAPI REST API",
+      githubUrl: "https://github.com/Code-bee23/California-House-price-prediction",
+      liveUrl: "",
+      image: "/projects/california-housing.svg"
     }
   ],
   learningPillars: [

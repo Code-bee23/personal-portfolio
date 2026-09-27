@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, CheckCircle2, Eye } from "lucide-react";
+import { ArrowRight, Eye, ExternalLink } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import { Project } from "@/data/portfolio";
 
@@ -33,20 +33,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           )}
 
           {/* Project Number Badge & Category Badges */}
-          <div className="absolute top-3 left-3 flex items-center gap-2 z-10">
+          <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
             <span className="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-cyan-500 text-slate-950 shadow-md">
               PROJECT {project.number}
             </span>
-            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-[#090d16]/90 border border-slate-700 text-cyan-300 backdrop-blur-md">
-              {project.category.join(" • ")}
-            </span>
+            {project.badge && (
+              <span className="px-2 py-0.5 rounded-md text-[11px] font-mono font-medium bg-slate-900/90 border border-slate-700 text-slate-300 backdrop-blur-md">
+                {project.badge}
+              </span>
+            )}
           </div>
 
           {/* Click Hint Overlay */}
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <span className="px-3.5 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-xs font-semibold shadow-md flex items-center gap-1.5">
               <Eye className="w-3.5 h-3.5" />
-              <span>View Full Details &amp; Architecture</span>
+              <span>View Details</span>
             </span>
           </div>
         </div>
@@ -54,8 +56,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
         {/* Card Body */}
         <div className="p-6 space-y-4">
           
-          {/* Title */}
+          {/* Title & Category */}
           <div>
+            <div className="text-xs font-mono text-cyan-400 mb-1">
+              {project.category.slice(0, 3).join(" • ")}
+            </div>
             <h3 
               onClick={() => onOpenModal(project)}
               className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors cursor-pointer"
@@ -73,7 +78,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           {project.highlights && project.highlights.length > 0 && (
             <div className="p-3.5 rounded-xl bg-[#070c17] border border-slate-800/80 space-y-2">
               <span className="font-mono text-[10px] uppercase text-cyan-400 font-semibold tracking-wider block">
-                Key Highlights:
+                Project Highlights:
               </span>
               <ul className="space-y-1.5">
                 {project.highlights.slice(0, 3).map((item, idx) => (
@@ -89,7 +94,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
           {/* Technology Badges */}
           <div className="space-y-1.5 pt-1">
             <span className="font-mono text-[10px] uppercase text-slate-500 block">
-              Technologies:
+              Technology Badges:
             </span>
             <div className="flex flex-wrap gap-1.5">
               {project.technologies.map((tech, idx) => (
@@ -117,7 +122,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             id={`github-${project.id}`}
           >
             <GithubIcon className="w-3.5 h-3.5 text-cyan-400" />
-            <span>View on GitHub</span>
+            <span>GitHub ↗</span>
           </a>
         ) : (
           <span className="text-xs text-slate-600 font-mono">Code Private</span>

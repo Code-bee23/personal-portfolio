@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import { X, CheckCircle2, ArrowRight, Layers, AlertCircle, Cpu, Activity, Server } from "lucide-react";
+import { X, CheckCircle2, ArrowRight, Layers, AlertCircle, Cpu, Activity, Server, FileCode2, ExternalLink } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import { Project } from "@/data/portfolio";
 
@@ -44,13 +44,18 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Header */}
         <div className="space-y-2 pr-10">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-md text-xs font-mono font-bold bg-cyan-500 text-slate-950">
               PROJECT {project.number}
             </span>
             <span className="px-2.5 py-0.5 rounded-md text-xs font-mono font-medium bg-cyan-950/80 border border-cyan-800/60 text-cyan-300">
               {project.category.join(" • ")}
             </span>
+            {project.badge && (
+              <span className="px-2 py-0.5 rounded-md text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800">
+                {project.badge}
+              </span>
+            )}
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
             {project.title}
@@ -125,12 +130,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
         </div>
 
-        {/* Architecture Flow */}
+        {/* Architecture Flow (Path 1: Standard / Individual) */}
         {project.architecture && project.architecture.length > 0 && (
           <div className="p-4 rounded-xl bg-[#090e1a] border border-slate-800 space-y-3">
             <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">
               <Layers className="w-4 h-4" />
-              <span>System Architecture</span>
+              <span>
+                {project.batchArchitecture ? "Architecture: Individual Prediction Path" : "System Architecture"}
+              </span>
             </div>
             <div className="flex flex-wrap items-center gap-2 text-xs">
               {project.architecture.map((step, idx) => (
@@ -147,7 +154,32 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
         )}
 
-        {/* Key Features (if provided) */}
+        {/* Architecture Flow (Path 2: Batch Processing Path if available) */}
+        {project.batchArchitecture && project.batchArchitecture.length > 0 && (() => {
+          const batchArch = project.batchArchitecture;
+          return (
+            <div className="p-4 rounded-xl bg-[#090e1a] border border-slate-800 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">
+                <Layers className="w-4 h-4" />
+                <span>Architecture: Batch CSV Prediction Path</span>
+              </div>
+              <div className="flex flex-wrap items-center gap-2 text-xs">
+                {batchArch.map((step, idx) => (
+                  <React.Fragment key={idx}>
+                    <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-900/60 text-emerald-200 font-mono font-medium">
+                      {step}
+                    </span>
+                    {idx < batchArch.length - 1 && (
+                      <ArrowRight className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* Key Features */}
         {project.keyFeatures && project.keyFeatures.length > 0 && (
           <div className="space-y-3">
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider font-mono">
@@ -164,6 +196,24 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 </li>
               ))}
             </ul>
+          </div>
+        )}
+
+        {/* Code Structure / File Tree (if provided) */}
+        {project.codeFiles && project.codeFiles.length > 0 && (
+          <div className="p-4 rounded-xl bg-[#080d17] border border-slate-800 space-y-3">
+            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+              <FileCode2 className="w-4 h-4" />
+              <span>Code Structure &amp; Repository Files</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+              {project.codeFiles.map((f, idx) => (
+                <div key={idx} className="p-2 rounded bg-slate-900/80 border border-slate-800 flex items-center justify-between">
+                  <span className="text-cyan-300 font-semibold">{f.file}</span>
+                  <span className="text-slate-400 text-[11px]">{f.desc}</span>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
@@ -192,25 +242,30 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
         )}
 
-        {/* Modal Footer / Action Links */}
-        <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
-          <div>
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium border border-slate-700 transition-colors"
-              >
-                <GithubIcon className="w-4 h-4 text-cyan-400" />
-                <span>View on GitHub</span>
-              </a>
-            )}
+        {/* GitHub CTA Banner */}
+        {project.githubUrl && (
+          <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-[#0e172a] to-slate-900 border border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+              <h4 className="text-sm font-semibold text-white">Want to explore the implementation?</h4>
+              <p className="text-xs text-slate-400">View the complete source code on GitHub.</p>
+            </div>
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-bold shadow-md transition-all flex-shrink-0"
+            >
+              <GithubIcon className="w-4 h-4" />
+              <span>View GitHub Repository ↗</span>
+            </a>
           </div>
+        )}
 
+        {/* Modal Footer */}
+        <div className="pt-2 border-t border-slate-800 flex justify-end">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-slate-300 hover:text-white text-sm transition-colors"
+            className="px-4 py-2 rounded-xl bg-slate-800/60 hover:bg-slate-800 text-slate-300 hover:text-white text-xs transition-colors"
           >
             Close Details
           </button>
