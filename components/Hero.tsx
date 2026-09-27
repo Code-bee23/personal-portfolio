@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Mail, FileText, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 import { portfolioData } from "@/data/portfolio";
 
@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="space-y-7 flex flex-col items-center">
           
-          {/* Small Label Badge */}
+          {/* Small Role Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-sm">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -32,14 +32,20 @@ export const Hero: React.FC = () => {
             </span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.12]">
-            Building{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500">
-              intelligent software
-            </span>{" "}
-            that solves real-world problems.
-          </h1>
+          {/* Name & Main Headline */}
+          <div className="space-y-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-cyan-400 tracking-tight">
+              Hi, I&apos;m <span className="text-white underline decoration-cyan-500 decoration-2 underline-offset-8">{personal.name}</span>
+            </h2>
+
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.12] pt-2">
+              Building{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500">
+                intelligent software
+              </span>{" "}
+              that solves real-world problems.
+            </h1>
+          </div>
 
           {/* Supporting Text */}
           <p className="text-base sm:text-xl text-slate-300 max-w-2xl leading-relaxed mx-auto">
