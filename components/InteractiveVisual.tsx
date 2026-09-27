@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Terminal, Cpu, Activity, Play, CheckCircle2, Copy, Check } from "lucide-react";
+import { Terminal, Cpu, Activity, Copy, Check } from "lucide-react";
 
 export const InteractiveVisual: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"api" | "model" | "pipeline">("model");
@@ -12,7 +12,7 @@ export const InteractiveVisual: React.FC = () => {
 import { RandomForestClassifier } from "scikit-learn"
 import { FastAPI, HTTPException } from "fastapi"
 
-app = FastAPI(title="Gauri-AI-Service", version="1.0.0")
+app = FastAPI(title="AI-Service", version="1.0.0")
 
 @app.post("/api/v1/predict-condition")
 async def predict_condition(symptoms: SymptomPayload):
@@ -27,7 +27,7 @@ async def predict_condition(symptoms: SymptomPayload):
         "precautions": fetch_precautions(prediction.top_label)
     }`,
     api: `# High-Performance Async REST Endpoint
-curl -X POST "https://gauri.dev/api/v1/ai-pipeline" \\
+curl -X POST "https://api.domain.dev/v1/ai-pipeline" \\
   -H "Content-Type: application/json" \\
   -d '{
     "task": "ocr_extraction_and_classification",
@@ -80,7 +80,6 @@ curl -X POST "https://gauri.dev/api/v1/ai-pipeline" \\
           <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
           <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-          <span className="ml-2 text-xs font-mono text-slate-400">gauri-ai-pipeline.py</span>
         </div>
 
         {/* Live Status indicator */}
