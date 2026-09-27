@@ -1,4 +1,6 @@
-%PDF-1.4
+import os
+
+pdf_content = """%PDF-1.4
 1 0 obj
 <<
   /Title (Gauri - Resume)
@@ -160,3 +162,10 @@ trailer
 startxref
 1770
 %%EOF
+"""
+
+os.makedirs("public/resume", exist_ok=True)
+with open("public/resume/Gauri_Resume.pdf", "wb") as f:
+    f.write(pdf_content.encode("latin-1"))
+
+print("Resume PDF successfully generated in public/resume/Gauri_Resume.pdf")
