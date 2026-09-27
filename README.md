@@ -56,9 +56,15 @@ You can easily update:
 
 ---
 
-## 🌐 Deploying to Vercel
+## 🌐 1-Click Deployment to Vercel
 
-1. Push your repository to GitHub.
-2. Import the repository in [Vercel](https://vercel.com/).
-3. Framework preset will automatically be detected as **Next.js**.
-4. Click **Deploy**.
+Click the button below to deploy your portfolio immediately:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FCode-bee23%2Fpersonal-portfolio)
+
+### Manual Steps (if preferred):
+1. Log in to [Vercel](https://vercel.com/) with your GitHub account.
+2. Click **"Add New"** → **"Project"**.
+3. Select **`personal-portfolio`** from your repository list.
+4. Click **Deploy**. Vercel will automatically build and assign you a live HTTPS URL (e.g. `https://personal-portfolio-phi.vercel.app`).
+
