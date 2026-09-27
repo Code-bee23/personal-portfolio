@@ -1,14 +1,18 @@
 export interface Project {
   id: string;
+  number: string;
   title: string;
-  category: ('AI/ML' | 'LLM' | 'Full-Stack' | 'Backend')[];
+  category: string[];
   description: string;
-  highlight: string;
+  highlights: string[];
   problem: string;
   solution: string;
   technologies: string[];
   keyFeatures: string[];
   architecture: string[];
+  deployment?: string;
+  performance?: string[];
+  disclaimer?: string;
   githubUrl?: string;
   liveUrl?: string;
   image?: string;
@@ -81,8 +85,8 @@ export const portfolioData: PortfolioData = {
     ],
     email: "gauri.dev.ai@example.com", // Customizable contact email
     github: "https://github.com/Code-bee23",
-    linkedin: "https://www.linkedin.com/in/gauri-ai", // Replace with your personal LinkedIn URL
-    resumeUrl: "/resume/Gauri_Resume.pdf", // Place your resume PDF in public/resume/
+    linkedin: "https://www.linkedin.com/in/gauri-ai", // Customizable LinkedIn URL
+    resumeUrl: "/resume/Gauri_Resume.pdf", // Place resume PDF in public/resume/
     location: "India (Open to Remote / Relocation)"
   },
   quickValues: [
@@ -180,81 +184,138 @@ export const portfolioData: PortfolioData = {
   projects: [
     {
       id: "ai-symptom-checker",
-      title: "AI Symptom Checker",
-      category: ["AI/ML", "Full-Stack", "Backend"],
-      description: "An AI-powered web application that predicts possible diseases based on selected symptoms and provides disease descriptions, precautions, and risk information.",
-      highlight: "Machine-learning powered prediction with a FastAPI backend and responsive web interface.",
-      problem: "Users often encounter generic medical articles online that make it hard to assess symptoms accurately or understand preliminary precautionary steps in an organized manner.",
-      solution: "Designed a clean, multi-symptom selector backed by a trained Random Forest classification model served over FastAPI REST endpoints with immediate precautionary guidance.",
-      technologies: ["Python", "FastAPI", "Scikit-learn", "Random Forest", "HTML", "CSS", "JavaScript", "Pandas", "NumPy"],
+      number: "01",
+      title: "AI-Powered Symptom Checker System",
+      category: ["Machine Learning", "Healthcare AI", "FastAPI"],
+      description: "An end-to-end AI-powered symptom checker built with Python that predicts possible diseases from user-selected symptoms.",
+      highlights: [
+        "94% precision on the stated dataset",
+        "Real-time inference under 200ms",
+        "FastAPI backend",
+        "Docker deployment",
+        "Custom disease-symptom dataset"
+      ],
+      technologies: [
+        "Python",
+        "Machine Learning",
+        "FastAPI",
+        "Docker",
+        "Scikit-learn",
+        "Random Forest",
+        "Pandas",
+        "NumPy"
+      ],
+      problem: "Users need a simple way to interact with symptom-based information through a software interface.",
+      solution: "An end-to-end symptom checker system was built from scratch using Python and a custom disease-symptom dataset. The system processes symptoms and provides a model-based prediction through a FastAPI backend.",
       keyFeatures: [
-        "Multi-select symptom input with instant validation",
-        "Random Forest classifier predicting high-probability conditions",
-        "Actionable precautions, risk assessment, and disease descriptions",
-        "Fast REST API endpoints built with FastAPI and Pydantic validation"
+        "Custom disease-symptom dataset integration",
+        "Random Forest classification engine",
+        "Real-time prediction under 200ms",
+        "Containerized with Docker and served via FastAPI"
       ],
       architecture: [
-        "User Interface (Interactive Selection)",
-        "FastAPI REST API Server",
-        "Scikit-learn ML Model (Random Forest)",
-        "Precaution & Risk Analytics Engine",
-        "Structured JSON Response to UI"
+        "User",
+        "Web Interface",
+        "FastAPI",
+        "ML Model",
+        "Disease Prediction"
       ],
+      deployment: "FastAPI + Docker",
+      performance: [
+        "94% Precision",
+        "<200ms Real-Time Inference"
+      ],
+      disclaimer: "Educational project only. This system is not a substitute for professional medical diagnosis, treatment, or medical advice.",
       githubUrl: "https://github.com/Code-bee23/ai-symptom-checker",
-      liveUrl: "", // Add live deployment URL here when available
+      liveUrl: "",
       image: "/projects/symptom-checker.svg"
     },
     {
-      id: "ai-mto-generator",
-      title: "AI MTO Generator",
-      category: ["AI/ML", "Full-Stack", "Backend"],
-      description: "An AI-powered application that extracts information from engineering documents/images and generates structured Material Take-Off data.",
-      highlight: "Combines OCR, computer vision, local AI, and document processing into an automated workflow.",
-      problem: "Engineering drawings, blueprints, and schematic PDFs contain scattered component quantities that engineers traditionally have to transcribe manually into Excel sheets.",
-      solution: "Created an automated document processing pipeline utilizing computer vision image preprocessing (OpenCV), OCR (EasyOCR), and local multimodal vision models (LLaVA via Ollama) to extract and format tabular data into ready-to-use Excel sheets.",
-      technologies: ["Python", "FastAPI", "Next.js", "EasyOCR", "OpenCV", "pdf2image", "Ollama", "LLaVA", "Excel automation"],
+      id: "ai-factory-assistant",
+      number: "02",
+      title: "AI Factory Assistant",
+      category: ["Agentic AI", "LLM", "Full-Stack"],
+      description: "An Agentic AI-powered factory assistant that answers production, quality, and maintenance queries in real time.",
+      highlights: [
+        "Agentic AI-powered assistant",
+        "Production queries",
+        "Quality queries",
+        "Maintenance queries",
+        "Hindi/English conversational support",
+        "Real-time data integration",
+        "ChatGPT-style interface"
+      ],
+      technologies: [
+        "FastAPI",
+        "Next.js",
+        "Groq",
+        "LLM",
+        "Agentic AI",
+        "TypeScript"
+      ],
+      problem: "Factory operations can involve frequent production, quality, and maintenance-related questions that require quick access to relevant information.",
+      solution: "An Agentic AI-powered factory assistant was developed to answer production, quality, and maintenance queries in real time. The application combines a Next.js interface, FastAPI backend, and Groq LLM.",
       keyFeatures: [
-        "Ingestion of high-resolution engineering schematics and PDFs",
-        "Computer vision image enhancement & table bounding box detection",
-        "Local multimodal AI extraction (LLaVA via Ollama) for zero data leakage",
-        "Automated generation of formatted Excel Material Take-Off (MTO) files"
+        "Production Support: Answers production-related queries.",
+        "Quality Support: Handles quality-related questions.",
+        "Maintenance Support: Provides conversational assistance for maintenance queries.",
+        "Hindi + English: Supports bilingual conversations.",
+        "Real-Time Data: Uses real-time data integration.",
+        "ChatGPT-Style Interface: Provides a familiar conversational user experience."
       ],
       architecture: [
-        "Document Ingestion (PDF / Image)",
-        "Preprocessing with OpenCV & pdf2image",
-        "OCR (EasyOCR) & Vision-LLM (LLaVA via Ollama)",
-        "FastAPI Data Parsing & Validation",
-        "Formatted Excel / CSV Export"
+        "User",
+        "Next.js Interface",
+        "FastAPI Backend",
+        "Groq LLM",
+        "Factory Data",
+        "AI Response"
       ],
-      githubUrl: "https://github.com/Code-bee23/ai-mto-generator",
+      deployment: "FastAPI + Next.js + Groq",
+      githubUrl: "https://github.com/Code-bee23/ai-factory-assistant",
       liveUrl: "",
-      image: "/projects/mto-generator.svg"
+      image: "/projects/factory-assistant.svg"
     },
     {
-      id: "ai-candidate-profile-chatbot",
-      title: "AI Candidate Profile Chatbot",
-      category: ["LLM", "AI/ML", "Full-Stack"],
-      description: "An AI-powered chatbot that answers questions based on a candidate profile while minimizing hallucinated information.",
-      highlight: "Structured candidate data + LLM-powered conversational interface.",
-      problem: "Recruiters and hiring managers spend valuable time sifting through resumes looking for specific skill validations, project details, and experience verification.",
-      solution: "Constructed an interactive recruiter-assistant chatbot grounded strictly on structured candidate profile data with low-latency LLM inference via Groq, providing factual answers and source grounding.",
-      technologies: ["Python", "FastAPI", "Groq", "Llama", "Pydantic", "Next.js", "TypeScript"],
+      id: "emotion-detection-text",
+      number: "03",
+      title: "Emotion Detection from Text",
+      category: ["NLP", "Machine Learning", "FastAPI"],
+      description: "An NLP system that analyzes textual input to detect and classify emotional states and sentiment in real time.",
+      highlights: [
+        "Text preprocessing & tokenization pipeline",
+        "Multi-class emotion classification",
+        "Real-time sentiment & tone inference",
+        "Clean FastAPI REST endpoint"
+      ],
+      technologies: [
+        "Python",
+        "Machine Learning",
+        "NLP",
+        "Scikit-learn",
+        "FastAPI",
+        "Pandas",
+        "NumPy"
+      ],
+      problem: "Textual messages and conversational interactions often lack emotional nuance, making automated emotion detection valuable for understanding sentiment and intent.",
+      solution: "Engineered an NLP classification system that tokenizes and vectorizes textual inputs, passes them through a trained classifier, and outputs discrete emotion labels with confidence scoring.",
       keyFeatures: [
-        "Strict anti-hallucination prompt conditioning with Pydantic verification",
-        "Ultra-fast sub-second LLM inference powered by Groq and Llama 3",
-        "Recruiter-focused quick prompt suggestions (e.g., 'Key AI skills', 'Past experience')",
-        "Modern conversational web interface with clear markdown formatting"
+        "NLP Text Preprocessing: Cleans stopwords, tokenizes, and normalizes input text.",
+        "Multi-Class Emotion Output: Predicts emotional categories (Joy, Sadness, Anger, Neutral).",
+        "Confidence Distribution: Delivers probability scores across all emotion classes.",
+        "REST API Endpoint: Low-latency FastAPI inference service."
       ],
       architecture: [
-        "Next.js / React Chat Frontend",
-        "FastAPI Backend Controller",
-        "Pydantic Candidate Profile Context Provider",
-        "Groq High-Speed Llama 3 Inference",
-        "Streamed Factual Response"
+        "User Text",
+        "NLP Preprocessing",
+        "FastAPI Backend",
+        "Emotion ML Model",
+        "Emotion Prediction"
       ],
-      githubUrl: "https://github.com/Code-bee23/candidate-profile-chatbot",
+      deployment: "FastAPI REST API",
+      githubUrl: "https://github.com/Code-bee23/emotion-detection-text",
       liveUrl: "",
-      image: "/projects/profile-chatbot.svg"
+      image: "/projects/emotion-detection.svg"
     }
   ],
   learningPillars: [

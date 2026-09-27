@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ExternalLink, ArrowRight, Layers, Cpu, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Eye } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import { Project } from "@/data/portfolio";
 
@@ -12,13 +12,13 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }) => {
   return (
-    <div className="group relative flex flex-col justify-between rounded-2xl bg-gradient-to-b from-slate-900/90 to-[#0b111e] border border-slate-800 hover:border-slate-700/80 transition-all duration-300 overflow-hidden shadow-xl hover:shadow-cyan-950/20">
+    <div className="group relative flex flex-col justify-between rounded-2xl bg-gradient-to-b from-slate-900/90 via-[#0d1424] to-[#0a0f1d] border border-slate-800/90 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-950/20 transition-all duration-300 overflow-hidden">
       
       <div>
-        {/* Project Image Header */}
+        {/* Project Image Header with Zoom on Hover */}
         <div 
           onClick={() => onOpenModal(project)}
-          className="relative w-full h-52 sm:h-60 overflow-hidden bg-[#070b14] border-b border-slate-800/80 cursor-pointer"
+          className="relative w-full h-52 sm:h-56 overflow-hidden bg-[#070b14] border-b border-slate-800/80 cursor-pointer"
         >
           {project.image ? (
             <img
@@ -32,29 +32,29 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             </div>
           )}
 
-          {/* Category Badges Overlay */}
-          <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
-            {project.category.map((cat, idx) => (
-              <span
-                key={idx}
-                className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-[#090d16]/90 border border-slate-700 text-cyan-300 backdrop-blur-md"
-              >
-                {cat}
-              </span>
-            ))}
+          {/* Project Number Badge & Category Badges */}
+          <div className="absolute top-3 left-3 flex items-center gap-2 z-10">
+            <span className="px-2.5 py-1 rounded-md text-xs font-mono font-bold bg-cyan-500 text-slate-950 shadow-md">
+              PROJECT {project.number}
+            </span>
+            <span className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-[#090d16]/90 border border-slate-700 text-cyan-300 backdrop-blur-md">
+              {project.category.join(" • ")}
+            </span>
           </div>
 
-          {/* Quick Click Hint */}
+          {/* Click Hint Overlay */}
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <span className="px-3.5 py-1.5 rounded-lg bg-cyan-500 text-slate-950 text-xs font-semibold shadow-md flex items-center gap-1.5">
-              <span>View System Specs &amp; Architecture</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <Eye className="w-3.5 h-3.5" />
+              <span>View Full Details &amp; Architecture</span>
             </span>
           </div>
         </div>
 
         {/* Card Body */}
         <div className="p-6 space-y-4">
+          
+          {/* Title */}
           <div>
             <h3 
               onClick={() => onOpenModal(project)}
@@ -62,78 +62,75 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenModal }
             >
               {project.title}
             </h3>
-            
-            <p className="text-xs text-cyan-400 font-mono mt-1 font-medium">
-              {project.highlight}
-            </p>
           </div>
 
-          <p className="text-slate-300 text-sm leading-relaxed line-clamp-3">
+          {/* Short Description */}
+          <p className="text-slate-300 text-sm leading-relaxed">
             {project.description}
           </p>
 
-          {/* Problem Solved Compact Box */}
-          <div className="p-3 rounded-xl bg-[#070c17] border border-slate-800/80 text-xs text-slate-400">
-            <span className="font-mono text-[10px] uppercase text-slate-500 block mb-0.5">Problem Focus:</span>
-            <span className="line-clamp-2 text-slate-300">{project.problem}</span>
+          {/* Project Highlights */}
+          {project.highlights && project.highlights.length > 0 && (
+            <div className="p-3.5 rounded-xl bg-[#070c17] border border-slate-800/80 space-y-2">
+              <span className="font-mono text-[10px] uppercase text-cyan-400 font-semibold tracking-wider block">
+                Key Highlights:
+              </span>
+              <ul className="space-y-1.5">
+                {project.highlights.slice(0, 3).map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-xs text-slate-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-1.5 flex-shrink-0"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Technology Badges */}
+          <div className="space-y-1.5 pt-1">
+            <span className="font-mono text-[10px] uppercase text-slate-500 block">
+              Technologies:
+            </span>
+            <div className="flex flex-wrap gap-1.5">
+              {project.technologies.map((tech, idx) => (
+                <span
+                  key={idx}
+                  className="px-2 py-0.5 rounded bg-slate-800/90 text-slate-300 text-[11px] font-mono border border-slate-700/50"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* Technologies Badges */}
-          <div className="flex flex-wrap gap-1.5 pt-1">
-            {project.technologies.slice(0, 6).map((tech, idx) => (
-              <span
-                key={idx}
-                className="px-2 py-0.5 rounded bg-slate-800/90 text-slate-300 text-[11px] font-mono"
-              >
-                {tech}
-              </span>
-            ))}
-            {project.technologies.length > 6 && (
-              <span className="px-2 py-0.5 rounded bg-slate-800/40 text-slate-500 text-[11px] font-mono">
-                +{project.technologies.length - 6} more
-              </span>
-            )}
-          </div>
         </div>
       </div>
 
       {/* Card Footer Actions */}
-      <div className="p-6 pt-0 border-t border-slate-800/50 mt-4 flex items-center justify-between gap-3">
+      <div className="p-6 pt-0 border-t border-slate-800/60 mt-4 flex items-center justify-between gap-3">
+        {project.githubUrl ? (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-medium border border-slate-700 transition-colors"
+            id={`github-${project.id}`}
+          >
+            <GithubIcon className="w-3.5 h-3.5 text-cyan-400" />
+            <span>View on GitHub</span>
+          </a>
+        ) : (
+          <span className="text-xs text-slate-600 font-mono">Code Private</span>
+        )}
+
         <button
           onClick={() => onOpenModal(project)}
-          className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group/btn transition-colors"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-semibold shadow-sm transition-all hover:scale-[1.02]"
+          id={`view-details-${project.id}`}
         >
-          <span>Architecture &amp; Specs</span>
-          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+          <span>View Details</span>
+          <ArrowRight className="w-3.5 h-3.5" />
         </button>
-
-        <div className="flex items-center gap-2">
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors"
-              title="View GitHub Repository"
-              aria-label={`${project.title} GitHub repository`}
-            >
-              <GithubIcon className="w-4 h-4" />
-            </a>
-          )}
-
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 hover:bg-cyan-500/30 transition-colors"
-              title="View Live Demo"
-              aria-label={`${project.title} Live Demo`}
-            >
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          )}
-        </div>
       </div>
 
     </div>

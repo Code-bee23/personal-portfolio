@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fa-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070c18" />
+      <stop offset="50%" stop-color="#0d1527" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="fa-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#fa-bg)" />
+
+  <pattern id="fa-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.4" />
+  </pattern>
+  <rect width="1200" height="700" fill="url(#fa-grid)" />
+
+  <!-- Window Container -->
+  <rect x="60" y="50" width="1080" height="600" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Window Header -->
+  <rect x="60" y="50" width="1080" height="50" rx="16" fill="#090d16" stroke="#334155" stroke-width="1" />
+  <circle cx="95" cy="75" r="6" fill="#ef4444" />
+  <circle cx="115" cy="75" r="6" fill="#f59e0b" />
+  <circle cx="135" cy="75" r="6" fill="#10b981" />
+  <text x="600" y="80" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="14" font-weight="500">AI Factory Assistant — Real-Time Production, Quality &amp; Maintenance Support</text>
+
+  <!-- Left Sidebar: Factory Operational Domains -->
+  <rect x="90" y="125" width="320" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+  <text x="115" y="160" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Operational Hub</text>
+  <text x="115" y="180" fill="#64748b" font-family="-apple-system, sans-serif" font-size="12">Agentic Multi-Domain Router</text>
+
+  <!-- Operational Mode Cards -->
+  <rect x="115" y="205" width="270" height="58" rx="8" fill="#1e1b4b" stroke="#4f46e5" stroke-width="1" />
+  <text x="135" y="230" fill="#a5b4fc" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">⚙️ Production Support</text>
+  <text x="135" y="249" fill="#c7d2fe" font-family="-apple-system, sans-serif" font-size="11">Real-time throughput, cycle time &amp; bottlenecks</text>
+
+  <rect x="115" y="275" width="270" height="58" rx="8" fill="#064e3b" stroke="#059669" stroke-width="1" />
+  <text x="135" y="300" fill="#6ee7b7" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">🔍 Quality Assurance</text>
+  <text x="135" y="319" fill="#a7f3d0" font-family="-apple-system, sans-serif" font-size="11">Defect rates, inspection specs &amp; tolerances</text>
+
+  <rect x="115" y="345" width="270" height="58" rx="8" fill="#78350f" stroke="#d97706" stroke-width="1" />
+  <text x="135" y="370" fill="#fde68a" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">🛠️ Maintenance Support</text>
+  <text x="135" y="389" fill="#fef3c7" font-family="-apple-system, sans-serif" font-size="11">Equipment telemetry &amp; troubleshooting</text>
+
+  <!-- Bilingual Pill -->
+  <rect x="115" y="420" width="270" height="42" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+  <text x="135" y="446" fill="#38bdf8" font-family="monospace" font-size="12">🌐 Hindi &amp; English Bilingual</text>
+
+  <!-- Engine Specs -->
+  <rect x="115" y="480" width="270" height="115" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+  <text x="130" y="505" fill="#94a3b8" font-family="monospace" font-size="11">Agentic AI Router • Groq LLM</text>
+  <text x="130" y="527" fill="#34d399" font-family="monospace" font-size="11">FastAPI Backend • Next.js UI</text>
+  <text x="130" y="549" fill="#38bdf8" font-family="monospace" font-size="11">Real-time Data Integration</text>
+  <text x="130" y="571" fill="#cbd5e1" font-family="monospace" font-size="11">ChatGPT-Style Conversational UX</text>
+
+  <!-- Right Side: ChatGPT-Style Conversational Interface -->
+  <rect x="430" y="125" width="680" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+
+  <!-- User Query 1 (Hindi / English blend) -->
+  <rect x="620" y="150" width="465" height="50" rx="12" fill="#2563eb" />
+  <text x="640" y="180" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="500">Line 4 CNC milling machine ka vibration level abnormally high kyu hai?</text>
+
+  <!-- Bot Response 1 -->
+  <rect x="455" y="215" width="630" height="230" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <circle cx="485" cy="245" r="14" fill="#6366f1" />
+  <text x="485" y="250" text-anchor="middle" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="11" font-weight="700">AI</text>
+  <text x="510" y="250" fill="#a5b4fc" font-family="-apple-system, sans-serif" font-size="13" font-weight="600">Factory Assistant (Maintenance Agent)</text>
+  <text x="1000" y="250" fill="#34d399" font-family="monospace" font-size="11">Live Sensor Synced</text>
+
+  <text x="480" y="285" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="13">Telemetry check completed for <tspan fill="#38bdf8" font-weight="600">CNC Milling Unit 4 (Spindle #2)</tspan>:</text>
+  
+  <text x="480" y="315" fill="#ef4444" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">⚠️ Detected Issue:</text>
+  <text x="605" y="315" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">Spindle bearing temperature exceeded 72°C (Vibration: 4.8 mm/s RMS).</text>
+  
+  <text x="480" y="345" fill="#10b981" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">🔧 Recommended Action:</text>
+  <text x="640" y="345" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="12">Check lubrication levels immediately or schedule bearing inspection before shift 2.</text>
+
+  <text x="480" y="380" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="12">Production Impact: Low risk if resolved within next 45 minutes.</text>
+
+  <!-- User Query 2 -->
+  <rect x="700" y="465" width="385" height="42" rx="12" fill="#2563eb" />
+  <text x="720" y="491" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="500">Quality inspection report for batch #B-889?</text>
+
+  <!-- Input Field -->
+  <rect x="455" y="555" width="630" height="48" rx="8" fill="#0b1120" stroke="#334155" stroke-width="1" />
+  <text x="480" y="585" fill="#64748b" font-family="-apple-system, sans-serif" font-size="13">Ask production, maintenance, or quality query (English / Hindi)...</text>
+  <rect x="1005" y="563" width="70" height="32" rx="6" fill="url(#fa-grad)" />
+  <text x="1040" y="583" text-anchor="middle" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">Send</text>
+</svg>

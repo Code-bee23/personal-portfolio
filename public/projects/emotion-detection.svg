@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ed-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080e1a" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="purple-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#ed-bg)" />
+
+  <pattern id="ed-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-opacity="0.4" />
+  </pattern>
+  <rect width="1200" height="700" fill="url(#ed-grid)" />
+
+  <!-- App Window Container -->
+  <rect x="60" y="50" width="1080" height="600" rx="16" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+
+  <!-- Window Header -->
+  <rect x="60" y="50" width="1080" height="50" rx="16" fill="#090d16" stroke="#334155" stroke-width="1" />
+  <circle cx="95" cy="75" r="6" fill="#ef4444" />
+  <circle cx="115" cy="75" r="6" fill="#f59e0b" />
+  <circle cx="135" cy="75" r="6" fill="#10b981" />
+  <text x="600" y="80" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="14" font-weight="500">Emotion Detection from Text — NLP Multi-Class Classification Engine</text>
+
+  <!-- Left: Input & NLP Pipeline Processing -->
+  <rect x="90" y="125" width="480" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+  <text x="115" y="160" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="15" font-weight="600">Input Text Sample</text>
+  <text x="115" y="180" fill="#64748b" font-family="-apple-system, sans-serif" font-size="12">Natural Language Processing Pipeline</text>
+
+  <!-- Input Text Box -->
+  <rect x="115" y="200" width="430" height="110" rx="8" fill="#0b1120" stroke="#334155" stroke-width="1" />
+  <text x="135" y="235" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-style="italic">"We just deployed the new AI model to production with zero downtime, and the feedback from the entire engineering team has been incredible!"</text>
+
+  <!-- NLP Tokenization breakdown -->
+  <rect x="115" y="325" width="430" height="150" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1" />
+  <text x="135" y="352" fill="#a5b4fc" font-family="monospace" font-size="11" font-weight="600">NLP TOKEN &amp; FEATURE EXTRACTION</text>
+  
+  <rect x="135" y="365" width="85" height="26" rx="4" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+  <text x="177" y="382" text-anchor="middle" fill="#c7d2fe" font-family="monospace" font-size="11">deployed</text>
+
+  <rect x="230" y="365" width="75" height="26" rx="4" fill="#1e1b4b" stroke="#6366f1" stroke-width="1" />
+  <text x="267" y="382" text-anchor="middle" fill="#c7d2fe" font-family="monospace" font-size="11">zero_dt</text>
+
+  <rect x="315" y="365" width="85" height="26" rx="4" fill="#065f46" stroke="#10b981" stroke-width="1" />
+  <text x="357" y="382" text-anchor="middle" fill="#a7f3d0" font-family="monospace" font-size="11">incredible</text>
+
+  <rect x="410" y="365" width="75" height="26" rx="4" fill="#065f46" stroke="#10b981" stroke-width="1" />
+  <text x="447" y="382" text-anchor="middle" fill="#a7f3d0" font-family="monospace" font-size="11">feedback</text>
+
+  <text x="135" y="420" fill="#94a3b8" font-family="monospace" font-size="11">Preprocessed: Lemmatization • Stopword removal • Vectorization</text>
+  <text x="135" y="442" fill="#38bdf8" font-family="monospace" font-size="11">Inference Engine: Scikit-learn / Deep Learning Classifier</text>
+  <text x="135" y="462" fill="#34d399" font-family="monospace" font-size="11">Latency: 18ms real-time REST endpoint</text>
+
+  <!-- Button -->
+  <rect x="115" y="495" width="430" height="42" rx="8" fill="url(#purple-cyan)" />
+  <text x="330" y="521" text-anchor="middle" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Classify Emotion →</text>
+
+  <!-- Right: Emotion Classification Breakdown -->
+  <rect x="590" y="125" width="520" height="495" rx="12" fill="#050a14" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Predicted Dominant Emotion -->
+  <rect x="615" y="150" width="470" height="90" rx="10" fill="#064e3b" stroke="#059669" stroke-width="1" />
+  <text x="635" y="180" fill="#a7f3d0" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">PREDICTED EMOTION</text>
+  <text x="635" y="215" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="24" font-weight="700">✨ Joy / Enthusiasm (92.4%)</text>
+
+  <!-- Probability Spectrum -->
+  <text x="615" y="270" fill="#f8fafc" font-family="-apple-system, sans-serif" font-size="14" font-weight="600">Multi-Class Probability Distribution</text>
+
+  <!-- Joy Bar -->
+  <text x="615" y="300" fill="#cbd5e1" font-family="monospace" font-size="12">Joy / Happiness</text>
+  <text x="1055" y="300" text-anchor="end" fill="#34d399" font-family="monospace" font-size="12">92.4%</text>
+  <rect x="615" y="310" width="470" height="12" rx="6" fill="#1e293b" />
+  <rect x="615" y="310" width="434" height="12" rx="6" fill="#10b981" />
+
+  <!-- Surprise / Optimism -->
+  <text x="615" y="345" fill="#cbd5e1" font-family="monospace" font-size="12">Optimism / Pride</text>
+  <text x="1055" y="345" text-anchor="end" fill="#38bdf8" font-family="monospace" font-size="12">5.2%</text>
+  <rect x="615" y="355" width="470" height="12" rx="6" fill="#1e293b" />
+  <rect x="615" y="355" width="25" height="12" rx="6" fill="#0ea5e9" />
+
+  <!-- Neutral -->
+  <text x="615" y="390" fill="#cbd5e1" font-family="monospace" font-size="12">Neutral</text>
+  <text x="1055" y="390" text-anchor="end" fill="#94a3b8" font-family="monospace" font-size="12">1.8%</text>
+  <rect x="615" y="400" width="470" height="12" rx="6" fill="#1e293b" />
+  <rect x="615" y="400" width="9" height="12" rx="6" fill="#64748b" />
+
+  <!-- Sadness -->
+  <text x="615" y="435" fill="#cbd5e1" font-family="monospace" font-size="12">Sadness</text>
+  <text x="1055" y="435" text-anchor="end" fill="#94a3b8" font-family="monospace" font-size="12">0.4%</text>
+  <rect x="615" y="445" width="470" height="12" rx="6" fill="#1e293b" />
+  <rect x="615" y="445" width="4" height="12" rx="6" fill="#3b82f6" />
+
+  <!-- Anger / Fear -->
+  <text x="615" y="480" fill="#cbd5e1" font-family="monospace" font-size="12">Anger / Frustration</text>
+  <text x="1055" y="480" text-anchor="end" fill="#94a3b8" font-family="monospace" font-size="12">0.2%</text>
+  <rect x="615" y="490" width="470" height="12" rx="6" fill="#1e293b" />
+  <rect x="615" y="490" width="2" height="12" rx="6" fill="#ef4444" />
+
+  <!-- Architecture summary box -->
+  <rect x="615" y="525" width="470" height="75" rx="8" fill="#1e1b4b" stroke="#4338ca" stroke-width="1" />
+  <text x="635" y="552" fill="#a5b4fc" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">PIPELINE ARCHITECTURE</text>
+  <text x="635" y="575" fill="#e2e8f0" font-family="monospace" font-size="11">Text Input → Tokenizer → Feature Vectorizer → Model → Probabilities</text>
+</svg>
