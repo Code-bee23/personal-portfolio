@@ -158,24 +158,6 @@ export const portfolioData: PortfolioData = {
       description: "Worked on AI/ML workflows and contributed to developing practical AI solutions using Python and deep learning technologies."
     },
     {
-      id: "srdt-ai-ml",
-      role: "AI & ML Experience",
-      company: "SRDT Pvt Ltd",
-      period: "September 2025",
-      location: "Internship / Trainee",
-      technologies: ["Machine Learning", "Python", "Data Science", "NumPy", "Pandas"],
-      description: "Worked with machine learning workflows and Python-based data science tools including NumPy and Pandas."
-    },
-    {
-      id: "lt-edutech-ml",
-      role: "Machine Learning Fundamentals",
-      company: "L&T EduTech",
-      period: "January 2025",
-      location: "Training & Project Work",
-      technologies: ["Supervised ML", "Model Evaluation", "NumPy", "Pandas", "Scikit-learn"],
-      description: "Worked with supervised machine learning models, model evaluation, NumPy, Pandas, and practical ML projects."
-    },
-    {
       id: "tcs-virtual-internship",
       role: "Virtual Internship",
       company: "Tata Consultancy Services (TCS)",
