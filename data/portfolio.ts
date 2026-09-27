@@ -381,6 +381,55 @@ export const portfolioData: PortfolioData = {
       githubUrl: "https://github.com/Code-bee23/California-House-price-prediction",
       liveUrl: "",
       image: "/projects/california-housing.svg"
+    },
+    {
+      id: "ai-powered-resume",
+      number: "05",
+      title: "AI-Powered Resume Analyzer",
+      category: ["NLP", "Python", "NLTK", "Full-Stack", "AI/ML", "Backend"],
+      badge: "NLP & Web Application",
+      description: "An NLP-driven web application that analyzes and processes resume content using NLTK and Python to extract skills, keywords, and candidate profile insights.",
+      highlights: [
+        "NLTK text processing & tokenization pipeline",
+        "Skill and keyword extraction from resumes",
+        "Real-time resume parsing & content analysis",
+        "Web interface with modular NLP utility functions"
+      ],
+      technologies: [
+        "Python",
+        "NLP",
+        "NLTK",
+        "Flask",
+        "HTML/Templates",
+        "Text Processing"
+      ],
+      problem: "Job seekers need an automated way to parse, analyze, and structure resume text for key skill extraction and technical keyword alignment.",
+      solution: "Engineered an NLP-powered resume analysis web application using custom NLP utility helpers (nlp_utils.py) and NLTK routines to tokenize, clean, and extract candidate skill profiles through an interactive web interface.",
+      keyFeatures: [
+        "01 — Resume Text Parsing: Ingests candidate resume content for lexical analysis.",
+        "02 — NLTK NLP Processing: Tokenizes, normalizes, and filters candidate resume tokens via setup_nltk.py.",
+        "03 — Skill & Keyword Extraction: Identifies technical competencies and domain keywords.",
+        "04 — Interactive Web UI: Presents structured analysis and candidate feedback."
+      ],
+      architecture: [
+        "User Resume Input",
+        "Text Preprocessing (setup_nltk & nlp_utils)",
+        "Keyword & Skill Extraction Engine",
+        "Web App Server (app.py)",
+        "Analysis Results & Dashboard"
+      ],
+      codeFiles: [
+        { file: "app.py", desc: "Web server application & route handler" },
+        { file: "nlp_utils.py", desc: "Text processing & skill extraction helpers" },
+        { file: "setup_nltk.py", desc: "NLTK resource and tokenizer setup" },
+        { file: "templates/", desc: "Web UI presentation templates" },
+        { file: "requirements.txt", desc: "Project dependencies" },
+        { file: "build.sh", desc: "Deployment build script" }
+      ],
+      deployment: "Python Web Application",
+      githubUrl: "https://github.com/Code-bee23/AI-powered-resume",
+      liveUrl: "",
+      image: "/projects/ai-resume.svg"
     }
   ],
   learningPillars: [
